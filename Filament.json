@@ -1,0 +1,50 @@
+{
+    "github.copilot.chat.codeGeneration.instructions": [
+      {
+        "text": "1. **Prioritize Minimal Impact (Laravel/Filament Context):** Understand the code's architectural context (Laravel structure, Filament components like Resources, Pages, Forms, Tables, Actions, Widgets, dependencies, assumptions, history) before modification. Aim for the smallest change that fulfills the requirement while preserving existing functionality and patterns within both Laravel and Filament. Avoid unnecessary refactoring."
+      },
+      {
+        "text": "2. **Targeted Implementation:** Identify and modify only the essential code sections (e.g., specific Filament component methods, Eloquent models, Blade views). Preserve unrelated code and maintain existing system behavior."
+      },
+      {
+        "text": "3. **Graduated Change Strategy:** \n   - **Default:** Implement the minimal, focused change for the specific request.\n   - **If Necessary:** Offer moderate, localized refactoring (e.g., improving a specific Filament form or action).\n   - **Only if Explicitly Requested:** Perform comprehensive restructuring."
+      },
+      {
+        "text": "4. **Clarify Ambiguity:** If the required scope (especially regarding Filament UI/UX or specific Laravel logic) is unclear, request clarification before proceeding. Do not assume a broader scope than specified."
+      },
+      {
+        "text": "5. **Document Potential Enhancements:** Note related improvements outside the immediate scope without implementing them (e.g., 'This Eloquent query could be optimized', 'A similar pattern in another Filament Resource could be updated later.')."
+      },
+      {
+        "text": "6. **Ensure Reversibility:** Design changes to be easily revertible if they don't yield the intended outcome or introduce issues."
+      },
+      {
+        "text": "7. **Adhere to Code Quality Standards (Laravel/Filament):**\n   - **Clarity & Readability:** Use descriptive names; keep functions/methods concise (especially within Filament components); follow PHP/Laravel style guides (PSR-12, Laravel Pint/StyleCI); structure Filament components logically.\n   - **Consistency:** Follow existing project patterns, Laravel conventions (Facades, Service Container, Eloquent), and Filament best practices (using component methods, helper functions) unless a change is justified.\n   - **Robust Error Handling:** Anticipate failures (database, validation, Livewire); use Laravel's exception handling; provide informative error messages/notifications within Filament.\n   - **Security:** Sanitize inputs (use Laravel validation); manage secrets securely (env vars); use Laravel policies for authorization within Filament.\n   - **Testability:** Design for testability (e.g., dependency injection, service classes); ensure adequate test coverage for both Laravel logic and Filament component interactions.\n   - **Documentation:** Comment complex/non-obvious code; use DocBlocks; document custom Filament components or complex logic."
+      },
+      {
+          "text": "8. **Leverage Filament Features:** When generating code for Filament, utilize its built-in components, helpers, and conventions (e.g., `Forms\Components`, `Tables\Columns`, `Actions`, `Notifications`) effectively rather than implementing custom solutions unnecessarily."
+      }
+    ],
+    "github.copilot.chat.testGeneration.instructions": [
+      {
+          "text": "1. **Focus on Requirements:** Generate tests (PHPUnit/PEST) that verify the specific requirements of the code change."
+      },
+      {
+          "text": "2. **Leverage Laravel & Filament Testing Tools:** Utilize Laravel's testing helpers (`$this->get()`, `$this->post()`, database testing traits) and Filament/Livewire's testing capabilities (e.g., `->assertSee()`, `->call()` on Livewire components, testing actions and forms)."
+      },
+      {
+          "text": "3. **Cover Key Scenarios:** Include tests for happy paths, edge cases, validation errors, and authorization rules relevant to the Laravel logic and Filament components involved."
+      },
+      {
+          "text": "4. **Maintain Test Quality:** Use descriptive test names; follow Arrange-Act-Assert pattern; keep tests focused and independent; use factories for data setup."
+      },
+      {
+          "text": "5. **Mock Dependencies:** Use mocking/stubbing appropriately for external services or complex dependencies to isolate the unit under test."
+      }
+    ],
+    "github.copilot.chat.commitMessageGeneration.instructions": [
+      {
+        "text": "1. **Conventional Commit Messages:** Generate commit messages following the Conventional Commits specification (e.g., `feat(filament-resource): add user email column`). Use imperative mood. Infer type (feat, fix, chore, refactor, test, docs) and scope (e.g., `filament-resource`, `eloquent-model`, `livewire`, `action`, `form`, `laravel-job`) from the changes."
+      }
+    ]
+  }

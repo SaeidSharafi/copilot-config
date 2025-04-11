@@ -1,0 +1,50 @@
+{
+    "github.copilot.chat.codeGeneration.instructions": [
+      {
+        "text": "1. **Prioritize Minimal Impact (Laravel API Context):** Understand the API's architectural context (route definitions, controllers, middleware, request validation, resource transformers, authentication, dependencies) before modification. Aim for the smallest change fulfilling the requirement while preserving existing API contracts and behavior. Avoid unnecessary refactoring."
+      },
+      {
+        "text": "2. **Targeted Implementation:** Identify and modify only the essential code sections (e.g., specific controller method, API Resource, Form Request, Eloquent model scope). Preserve unrelated code and maintain API stability."
+      },
+      {
+        "text": "3. **Graduated Change Strategy:** \n   - **Default:** Implement the minimal, focused change for the specific API endpoint/resource.\n   - **If Necessary:** Offer moderate, localized refactoring (e.g., improving a specific controller action or API resource).\n   - **Only if Explicitly Requested:** Perform comprehensive restructuring (potentially versioning the API)."
+      },
+      {
+        "text": "4. **Clarify Ambiguity:** If the required scope (API endpoint behavior, response structure, validation rules) is unclear, request clarification before proceeding. Do not assume broader changes to the API contract."
+      },
+      {
+        "text": "5. **Document Potential Enhancements:** Note related API improvements outside the immediate scope without implementing them (e.g., 'Consider adding HATEOAS links', 'This query could be optimized for better performance.')."
+      },
+      {
+        "text": "6. **Ensure Reversibility:** Design changes to be easily revertible, especially crucial for public-facing APIs."
+      },
+      {
+        "text": "7. **Adhere to Code Quality Standards (Laravel API):**\n   - **Clarity & Readability:** Use descriptive names; keep controller actions focused; follow PHP/Laravel style guides (PSR-12).\n   - **Consistency:** Follow existing project patterns, Laravel conventions, RESTful principles (HTTP verbs, status codes), and established API response formats (e.g., JSON:API, consistent error structure).\n   - **Robust Error Handling:** Use Laravel's exception handling; return appropriate HTTP status codes (4xx for client errors, 5xx for server errors); provide clear, consistent JSON error responses.\n   - **Security:** Use Form Requests for validation/authorization; implement robust authentication (Sanctum/Passport); protect against common API vulnerabilities (rate limiting, mass assignment); use Laravel policies.\n   - **Testability:** Design for testability (dependency injection, service classes); ensure adequate API endpoint test coverage.\n   - **Documentation:** Comment complex logic; use DocBlocks; consider API documentation standards (OpenAPI/Swagger) - generate or update definitions if requested/applicable."
+      },
+      {
+          "text": "8. **Leverage Laravel API Features:** Utilize features like API Resources for transformations, Form Requests for validation/authorization, middleware for cross-cutting concerns, and built-in authentication systems effectively."
+      }
+    ],
+    "github.copilot.chat.testGeneration.instructions": [
+      {
+          "text": "1. **Focus on API Contract:** Generate tests (PHPUnit/PEST Feature Tests) that verify the API endpoint's behavior, request handling, response structure, status codes, and headers according to requirements."
+      },
+      {
+          "text": "2. **Utilize Laravel HTTP Testing:** Leverage Laravel's testing helpers (`$this->getJson()`, `$this->postJson()`, `assertStatus()`, `assertJsonStructure()`, `assertJsonFragment()`, `withHeaders()`, `actingAs()`)."
+      },
+      {
+          "text": "3. **Cover Key Scenarios:** Include tests for successful requests (2xx status codes), client errors (4xx - validation, authentication, authorization, not found), server errors (5xx where mockable), different input variations, and edge cases."
+      },
+      {
+          "text": "4. **Maintain Test Quality:** Use descriptive test names; follow Arrange-Act-Assert; keep tests focused on a specific endpoint/behavior; use factories for data setup; test validation rules and error responses thoroughly."
+      },
+      {
+          "text": "5. **Mock Dependencies:** Mock external service calls or complex dependencies to ensure reliable API endpoint testing."
+      }
+    ],
+    "github.copilot.chat.commitMessageGeneration.instructions": [
+      {
+        "text": "1. **Conventional Commit Messages:** Generate commit messages following the Conventional Commits specification (e.g., `fix(api): correct user resource structure`). Use imperative mood. Infer type (feat, fix, chore, refactor, test, docs) and scope (e.g., `api-controller`, `api-resource`, `validation`, `auth`, `middleware`, `routes`) from the changes."
+      }
+    ]
+  }
