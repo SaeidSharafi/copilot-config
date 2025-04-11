@@ -1,28 +1,28 @@
 {
   "github.copilot.chat.codeGeneration.instructions": [
     {
-      "text": "1. **Prioritize Minimal Impact (Laravel/Inertia/Vue):** Understand the context (Laravel backend logic, Inertia data transfer, Vue component structure/state management, Tailwind utility usage, dependencies) before modification. Aim for the smallest change preserving existing functionality and patterns across the stack. Avoid unnecessary refactoring."
+      "text": "1. **Prioritize Minimal Impact (Laravel/Inertia.js/Vue):** Understand the context (Laravel backend logic, Inertia.js data transfer, Vue component structure/state management, Tailwind utility usage, dependencies) before modification. Aim for the smallest change preserving existing functionality and patterns across the stack. Avoid unnecessary refactoring."
     },
     {
-      "text": "2. **Targeted Implementation:** Modify only essential sections (e.g., specific Vue component, Laravel controller method passing props, relevant Tailwind classes). Preserve unrelated code."
+      "text": "2. **Targeted Implementation:** Modify only essential sections (e.g., specific Vue component, Laravel controller method passing props via Inertia.js, relevant Tailwind classes). Preserve unrelated code."
     },
     {
       "text": "3. **Graduated Change Strategy:** \n   - **Default:** Minimal, focused change.\n   - **If Necessary:** Localized refactoring (e.g., improving a Vue component's logic or related controller method).\n   - **Only if Explicitly Requested:** Comprehensive restructuring."
     },
     {
-      "text": "4. **Clarify Ambiguity:** If the required scope (especially regarding data flow via Inertia or Vue component interaction) is unclear, ask before proceeding."
+      "text": "4. **Clarify Ambiguity:** If the required scope (especially regarding data flow via Inertia.js or Vue component interaction) is unclear, ask before proceeding."
     },
     {
-      "text": "5. **Document Potential Enhancements:** Note related improvements (e.g., 'This data could be passed more efficiently via Inertia', 'A shared Vue composable could be extracted here.')."
+      "text": "5. **Document Potential Enhancements:** Note related improvements (e.g., 'This data could be passed more efficiently via Inertia.js', 'A shared Vue composable could be extracted here.')."
     },
     {
       "text": "6. **Ensure Reversibility:** Design changes to be easily revertible."
     },
     {
-      "text": "7. **Adhere to Code Quality Standards (Laravel/Inertia/Vue/Tailwind):**\n   - **Clarity & Readability:** Use descriptive names (PHP, JS); keep functions/methods/components concise; follow PHP/Laravel (PSR-12) and JS/Vue style guides (e.g., ESLint/Prettier); structure Vue components logically (Composition API preferred); use Tailwind classes semantically.\n   - **Consistency:** Follow existing project patterns, Laravel conventions, Inertia practices (prop passing), Vue best practices (state management, component communication), and Tailwind's utility-first approach/design tokens.\n   - **Robust Error Handling:** Handle errors in both backend (Laravel exceptions) and frontend (Vue error boundaries, try-catch in async operations); provide user feedback.\n   - **Security:** Sanitize inputs (Laravel validation); manage secrets securely (env vars); protect against XSS in Vue; use Laravel policies/middleware for authorization.\n   - **Testability:** Design for testability (Laravel services, Vue composables/props); ensure adequate test coverage (backend feature/unit tests, frontend component tests).\n   - **Documentation:** Comment complex code (PHP, JS); use DocBlocks/JSDoc; document Vue component props/events."
+      "text": "7. **Adhere to Code Quality Standards (Laravel/Inertia.js/Vue/Tailwind):**\n   - **Clarity & Readability:** Use descriptive names (PHP, JS); keep functions/methods/components concise; follow PHP/Laravel (PSR-12) and JS/Vue style guides (e.g., ESLint/Prettier); structure Vue components logically (Composition API preferred); use Tailwind classes semantically.\n   - **Consistency:** Follow existing project patterns, Laravel conventions, Inertia.js practices (prop passing), Vue best practices (state management, component communication), and Tailwind's utility-first approach/design tokens.\n   - **Robust Error Handling:** Handle errors in both backend (Laravel exceptions) and frontend (Vue error boundaries, try-catch in async operations); provide user feedback.\n   - **Security:** Sanitize inputs (Laravel validation); manage secrets securely (env vars); protect against XSS in Vue; use Laravel policies/middleware for authorization.\n   - **Testability:** Design for testability (Laravel services, Vue composables/props); ensure adequate test coverage (backend feature/unit tests, frontend component tests).\n   - **Documentation:** Comment complex code (PHP, JS); use DocBlocks/JSDoc; document Vue component props/events."
     },
     {
-        "text": "8. **Leverage Stack Features:** Utilize Inertia for data passing, leverage Vue 3 features (Composition API, `<script setup>`), use Tailwind utilities effectively, and follow Laravel best practices for backend logic."
+        "text": "8. **Leverage Stack Features:** Utilize Inertia.js for data passing, leverage Vue 3 features (Composition API, `<script setup>`), use Tailwind utilities effectively, and follow Laravel best practices for backend logic."
     }
   ],
   "github.copilot.chat.testGeneration.instructions": [
@@ -30,7 +30,7 @@
         "text": "1. **Focus on Requirements:** Generate tests (PHPUnit/PEST for backend, Vitest/Jest for frontend) verifying the change."
     },
     {
-        "text": "2. **Test Across the Stack:** \n    - **Backend (Laravel):** Use Laravel's testing helpers to test controller logic, data preparation for Inertia, validation, and authorization.\n    - **Frontend (Vue):** Use Vue Test Utils (with Vitest/Jest) to test component rendering, prop handling, event emission, and user interactions. Mock Inertia responses/visits where necessary."
+        "text": "2. **Test Across the Stack:** \n    - **Backend (Laravel):** Use Laravel's testing helpers to test controller logic, data preparation for Inertia.js, validation, and authorization.\n    - **Frontend (Vue):** Use Vue Test Utils (with Vitest/Jest) to test component rendering, prop handling, event emission, and user interactions. Mock Inertia.js responses/visits where necessary."
     },
     {
         "text": "3. **Cover Key Scenarios:** Include tests for happy paths, edge cases, validation feedback (both backend rules and frontend display), component state changes, and authorization."
@@ -41,7 +41,7 @@
   ],
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
-      "text": "1. **Conventional Commit Messages:** Generate commit messages following the Conventional Commits specification (e.g., `feat(vue-component): add sorting feature`). Use imperative mood. Infer type (feat, fix, chore, refactor, test, docs) and scope (e.g., `laravel-controller`, `inertia-props`, `vue-component`, `tailwind`, `api`) from the changes."
+      "text": "1. **Conventional Commit Messages:** Generate commit messages following the Conventional Commits specification (e.g., `feat(vue-component): add sorting feature`). Use imperative mood. Infer type (feat, fix, chore, refactor, test, docs) and scope (e.g., `laravel-controller`, `inertiajs-props`, `vue-component`, `tailwind`, `api`) from the changes."
     }
   ]
 }
